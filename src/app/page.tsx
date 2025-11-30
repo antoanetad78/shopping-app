@@ -6,8 +6,7 @@ export default async function Products() {
         url: 'https://dummyjson.com/products',
     });
     return (
-        <main className='flex min-h-screen w-full max-w-3xl flex-col items-center justify-between p-16 bg-white dark:bg-black sm:items-start'>
-            Shopping app here, hi! This will be the list of products page
+        <main className='min-h-screen w-full bg-white dark:bg-black pb-16'>
             <ProductList products={products} />
         </main>
     );
