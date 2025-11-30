@@ -1,4 +1,5 @@
 import { fetchData } from '@/lib/fetchData';
+import ProductDetails from '@/components/ProductDetails';
 
 async function Product({ params }: { params: Promise<{ id: string }> }) {
     const { id } = await params;
@@ -6,7 +7,7 @@ async function Product({ params }: { params: Promise<{ id: string }> }) {
         url: `https://dummyjson.com/products/${id}`,
         revalidate: 300,
     });
-    return <div>{product.title}</div>;
+    return <ProductDetails product={product} />;
 }
 
 export default Product;

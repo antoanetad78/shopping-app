@@ -1,3 +1,5 @@
+import { ElementType, HTMLAttributes } from 'react';
+
 export type Product = {
     id: number;
     title: string;
@@ -39,3 +41,25 @@ export type Product = {
     thumbnail: string;
     images: string[];
 };
+
+export type CardProps<T> = {
+    title: string;
+    subtitle?: string;
+    image?: string;
+    description?: string;
+    onClick?: () => void;
+    data: T;
+    extra?: React.ReactNode;
+    className?: string;
+};
+
+export interface TextProps extends HTMLAttributes<ElementType> {
+    text: string;
+    as?: ElementType;
+}
+
+export interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
+    text: string;
+    onClick: () => void;
+    className?: string;
+}
